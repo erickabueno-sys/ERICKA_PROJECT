@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shop | Habi Wear</title>
+<meta name="description" content="Search, filter and sort the Habi Wear clothing catalog.">
+<link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="../assets/css/style.css" rel="stylesheet">
+</head>
+<body data-root="../">
+<a class="skip-link" href="#main">Skip to main content</a>
+<header>
+<nav class="navbar navbar-expand-md site-nav" aria-label="Main navigation"><div class="container">
+ <a class="brand navbar-brand" href="../index.html">Habi<span>Wear</span></a>
+ <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+ <div class="collapse navbar-collapse" id="mainNav"><ul class="navbar-nav ms-auto align-items-md-center">
+  <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li><li class="nav-item"><a class="nav-link" href="../pages/shop.html" aria-current="page">Shop</a></li>
+  <li class="nav-item"><a class="nav-link cart-link" href="../pages/cart.html">Cart<span class="cart-count" aria-label="0 items in cart">0</span></a></li>
+ </ul></div></div></nav>
+<div class="weave" aria-hidden="true"></div>
+</header>
+<main id="main">
+<section class="section pb-0"><div class="container">
+ <h1 class="h2 mb-1">Shop all clothing</h1><p class="text-muted">Search, filter and sort the full catalog.</p>
+ <form class="toolbar mb-4" role="search" aria-label="Filter products" onsubmit="return false">
+  <div class="row g-3 align-items-end">
+   <div class="col-md-5"><label for="search" class="form-label">Search</label><input id="search" type="search" class="form-control" placeholder="Try “linen” or “hoodie”" autocomplete="off"></div>
+   <div class="col-sm-6 col-md-3"><label for="sort" class="form-label">Sort by</label>
+    <select id="sort" class="form-select"><option value="featured">Featured</option><option value="price-asc">Price: low to high</option><option value="price-desc">Price: high to low</option><option value="name">Name: A to Z</option></select></div>
+   <div class="col-sm-6 col-md-4"><label for="priceRange" class="form-label">Max price: <output id="priceOut" for="priceRange">₱2,000</output></label><input id="priceRange" type="range" class="form-range" min="400" max="2000" step="50" value="2000"></div>
+   <div class="col-12"><div id="filters" class="filter-pills d-flex flex-wrap gap-2" role="group" aria-label="Category"></div></div>
+   <div class="col-12 d-flex justify-content-between flex-wrap gap-2 align-items-center">
+    <div class="form-check"><input class="form-check-input" type="checkbox" id="wishOnly"><label class="form-check-label" for="wishOnly">Show only saved items</label></div>
+    <p id="resultCount" class="mb-0 text-muted" role="status" aria-live="polite"></p></div>
+  </div>
+ </form>
+ <div class="row g-3" id="productGrid"></div>
+ <div id="emptyState" class="empty-state d-none"><h2 class="h5">No items match your filters</h2><p class="text-muted">Try a different search, raise the max price, or clear your filters.</p><button type="button" id="resetFilters" class="btn btn-ink">Clear filters</button></div>
+</div></section></main>
+<footer class="site-footer"><div class="container"><div class="row g-4">
+ <div class="col-md-6"><p class="brand h4 mb-1 text-white">HabiWear</p><p class="text-muted mb-0">Everyday clothing for the tropics. Student project for CC211, Polytechnic College of Botolan. Not a real store.</p></div>
+ <div class="col-md-6 text-md-end"><a href="../pages/shop.html">Shop all</a> · <a href="../pages/cart.html">Cart</a> · <a href="#main">Back to top</a></div>
+</div></div></footer>
+<div class="toast-container position-fixed bottom-0 end-0 p-3"><div id="toast" class="toast text-bg-dark" role="status" aria-live="polite" aria-atomic="true"><div class="toast-body"></div></div></div>
+<div class="modal fade" id="quickModal" tabindex="-1" aria-labelledby="qvName" aria-hidden="true">
+ <div class="modal-dialog modal-dialog-centered modal-lg"><div class="modal-content">
+  <div class="modal-header"><h2 class="modal-title h4" id="qvName">Product</h2><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+  <div class="modal-body"><div class="row g-4">
+   <div class="col-md-5"><img id="qvImg" src="" alt="" class="img-fluid rounded" width="400" height="500"></div>
+   <div class="col-md-7">
+    <p class="h4" id="qvPrice"></p><p id="qvDesc"></p>
+    <fieldset class="mb-3"><legend class="form-label fs-6">Size</legend><div id="qvSizes" class="d-flex flex-wrap gap-2"></div></fieldset>
+    <label for="qvQty" class="form-label">Quantity (1–10)</label>
+    <input id="qvQty" type="number" class="form-control mb-3" min="1" max="10" value="1" style="max-width:8rem">
+    <button type="button" id="qvAdd" class="btn btn-mango btn-lg">Add to cart</button>
+   </div></div></div>
+ </div></div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/js/products.js"></script>
+<script src="../assets/js/script.js"></script>
+</body></html>

@@ -1,0 +1,93 @@
+/* Habi Wear - visual identity: indigo ink, mango, teal, on a cool light ground */
+:root{
+  --ink:#16213E; --ink-2:#0B1226; --mango:#F4B942; --mango-d:#C9921C; --teal:#17776B;
+  --bg:#F5F6F8; --paper:#fff; --muted:#4F596D; --line:#DDE1E8;
+  --bs-body-font-family:"Public Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --bs-body-bg:var(--bg); --bs-body-color:var(--ink); --bs-link-color:var(--teal);
+}
+body{font-family:var(--bs-body-font-family);line-height:1.6;background:var(--bg);color:var(--ink)}
+h1,h2,h3,h4,.brand,.display-hero{font-family:"Bricolage Grotesque","Public Sans",system-ui,sans-serif;font-weight:700;letter-spacing:-.02em}
+.text-muted,.text-secondary{color:var(--muted)!important}
+a{text-underline-offset:3px}
+
+/* Keyboard focus is always visible */
+:focus-visible{outline:3px solid var(--ink)!important;outline-offset:3px;box-shadow:0 0 0 6px var(--mango)!important;border-radius:4px}
+.skip-link{position:absolute;left:-999px;top:8px;background:var(--ink);color:#fff;padding:.5rem 1rem;z-index:2000;border-radius:6px}
+.skip-link:focus{left:8px}
+
+/* Woven strip: the one memorable motif */
+.weave{height:18px;background:
+  repeating-linear-gradient(90deg,var(--mango) 0 14px,var(--ink) 14px 28px,var(--teal) 28px 42px,var(--ink) 42px 56px),
+  var(--ink);position:relative}
+.weave::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(255,255,255,.22) 0 3px,transparent 3px 6px)}
+
+/* Navbar */
+.site-nav{background:var(--paper);border-bottom:1px solid var(--line)}
+.brand{font-size:1.5rem;color:var(--ink);text-decoration:none}
+.brand span{color:var(--teal)}
+.site-nav .nav-link{color:var(--ink);font-weight:500;padding:.5rem .9rem}
+.site-nav .nav-link[aria-current="page"]{box-shadow:inset 0 -3px 0 var(--mango)}
+.cart-link{position:relative}
+.cart-count{background:var(--ink);color:#fff;border-radius:999px;font-size:.75rem;min-width:1.4rem;height:1.4rem;display:inline-flex;align-items:center;justify-content:center;padding:0 .35rem;margin-left:.35rem}
+
+/* Buttons */
+.btn{border-radius:8px;font-weight:600}
+.btn-ink{background:var(--ink);color:#fff;border:2px solid var(--ink)}
+.btn-ink:hover{background:var(--ink-2);color:#fff}
+.btn-mango{background:var(--mango);color:var(--ink);border:2px solid var(--mango)}
+.btn-mango:hover{background:var(--mango-d);border-color:var(--mango-d);color:var(--ink)}
+.btn-outline-ink{border:2px solid var(--ink);color:var(--ink);background:transparent}
+.btn-outline-ink:hover,.btn-check:checked+.btn-outline-ink{background:var(--ink);color:#fff}
+
+/* Hero */
+.hero{padding:3.5rem 0 3rem}
+.display-hero{font-size:clamp(2.4rem,6vw,4.4rem);line-height:1.02}
+.hero-lead{font-size:1.15rem;max-width:34rem;color:var(--muted)}
+.hero-stack{position:relative;min-height:420px}
+.hero-stack img{position:absolute;width:52%;border:6px solid var(--paper);border-radius:10px;background:var(--paper);box-shadow:0 14px 28px rgba(22,33,62,.15)}
+.hero-stack img:nth-child(1){left:0;top:30px;transform:rotate(-4deg)}
+.hero-stack img:nth-child(2){left:24%;top:0;transform:rotate(2deg);z-index:2}
+.hero-stack img:nth-child(3){right:0;top:70px;transform:rotate(5deg)}
+
+/* Sections */
+.section{padding:3rem 0}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:1rem;flex-wrap:wrap;margin-bottom:1.5rem}
+.cat-link{display:block;padding:1.1rem 1.25rem;background:var(--paper);border:2px solid var(--ink);border-radius:10px;color:var(--ink);text-decoration:none;font-weight:600;height:100%}
+.cat-link:hover{background:var(--mango)}
+.cat-link small{display:block;font-weight:400;color:var(--muted)}
+.cat-link:hover small{color:var(--ink)}
+
+/* Product cards */
+.product-card{background:var(--paper);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.product-media{position:relative;background:#EEF0F4}
+.product-media img{width:100%;height:auto;display:block;aspect-ratio:4/5;object-fit:cover}
+.product-body{padding:.85rem 1rem 1rem}
+.product-body h3{font-size:1.05rem;margin:0 0 .15rem}
+.badge-tag{position:absolute;left:.6rem;top:.6rem;background:var(--ink);color:#fff;font-size:.75rem;font-weight:600;padding:.2rem .55rem;border-radius:6px}
+.wish-btn{position:absolute;right:.5rem;top:.5rem;width:2.4rem;height:2.4rem;border-radius:50%;border:0;background:rgba(255,255,255,.95);color:var(--ink);font-size:1.2rem;line-height:1;display:grid;place-items:center}
+.wish-btn[aria-pressed="true"]{background:var(--mango)}
+
+/* Shop toolbar */
+.toolbar{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:1rem}
+.filter-pills .btn{padding:.3rem .85rem;font-size:.9rem}
+.empty-state{border:2px dashed var(--line);border-radius:12px;padding:2.5rem 1rem;text-align:center;background:var(--paper)}
+
+/* Cart + form */
+.cart-row{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:.85rem}
+.cart-row img{width:84px;height:105px;object-fit:cover;border-radius:8px;background:#EEF0F4}
+.qty-btn{width:2.2rem;height:2.2rem;padding:0;line-height:1}
+.summary{background:var(--paper);border:2px solid var(--ink);border-radius:12px;padding:1.25rem}
+.form-label{font-weight:600}
+.form-control,.form-select{border:1.5px solid #8A93A5;border-radius:8px;padding:.6rem .8rem}
+.invalid-feedback{font-size:.9rem}
+
+/* Footer */
+.site-footer{background:var(--ink);color:#E6E9F0;padding:2.5rem 0 1.5rem;margin-top:3rem}
+.site-footer a{color:#fff}
+.site-footer .text-muted{color:#B8BFCE!important}
+
+@media (max-width:575.98px){
+  .hero{padding-top:2rem}.hero-stack{min-height:300px}
+  .cart-row img{width:64px;height:80px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
